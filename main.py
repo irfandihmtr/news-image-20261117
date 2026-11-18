@@ -136,8 +136,7 @@ def icon_scales(d, x, y, s, col):
 def draw_bridge(d, x, y, w, h):
     """Flat side view of the Kerch Bridge: left half intact, right arch fallen."""
     d.rectangle([x, y, x + w, y + h], fill=SKY)
-    sx, sy, sr = x + w * 0.86, y + h * 0.16, h * 0.09
-    d.ellipse([sx - sr, sy - sr, sx + sr, sy + sr], fill=GOLD)
+    # (no sun: the scene reads cleaner without it)
     sea_y = y + h * 0.62
     d.rectangle([x, sea_y, x + w, y + h], fill=SEA)
     for i in range(3):
@@ -147,8 +146,9 @@ def draw_bridge(d, x, y, w, h):
     d.rectangle([x, rail_y, x + w, rail_y + 6], fill=(70, 85, 105))
     deck_y = y + h * 0.44
     d.rectangle([x, deck_y, x + w * 0.52, deck_y + 10], fill=INK)
-    d.polygon([(x + w * 0.56, deck_y + 16), (x + w * 0.86, deck_y + h * 0.20),
-               (x + w * 0.88, deck_y + h * 0.20 + 8), (x + w * 0.58, deck_y + 24)],
+    # fallen span: a thick slab tilted down into the water
+    d.polygon([(x + w * 0.56, deck_y + 10), (x + w * 0.82, deck_y + h * 0.30),
+               (x + w * 0.84, deck_y + h * 0.30 + 34), (x + w * 0.58, deck_y + 44)],
               fill=INK)
     for px in (0.10, 0.34):
         d.rectangle([x + w * px, deck_y - h * 0.16, x + w * px + 8, sea_y], fill=STEEL)
