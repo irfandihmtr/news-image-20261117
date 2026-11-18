@@ -173,7 +173,8 @@ SECONDARIES = [
     ("SPACE", "ULA: Vulcan's first stage faltered",
      "Tuesday update on the launch that lost 40 satellites.", icon_rocket, RED),
     ("ASIA-PACIFIC", "Japan scrambles jets over Russian planes",
-     "Tokyo protests after an airspace violation.", icon_jet, (42, 90, 90)),
+     "Tokyo protests after an airspace violation, the first since 2024.",
+     icon_jet, (42, 90, 90)),
     ("BRITAIN", "UK sanctions eight settlement firms",
      "Asset freezes over West Bank building; aid-blockers hit too.",
      icon_scales, (96, 74, 28)),
@@ -196,7 +197,7 @@ def render():
     hl = wrap(d, "KERCH BRIDGE ROAD ARCH COLLAPSES", F("DejaVuSans-Bold.ttf", 56), 600)
     y = text_lines(d, 36, 172, hl, F("DejaVuSans-Bold.ttf", 56), INK, leading=62)
     sub = wrap(d, "Ukraine strikes the Crimea link a second day; Kyiv's bridges "
-               "hit in return. Traffic halted; the Kremlin vows to rebuild.",
+               "hit in return. Road traffic halted; the Kremlin vows to rebuild.",
                F("DejaVuSans.ttf", 25), 600)
     text_lines(d, 36, y + 14, sub, F("DejaVuSans.ttf", 25), (52, 48, 40), leading=32)
     draw_bridge(d, 668, 140, 320, 330)
